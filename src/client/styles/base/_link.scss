@@ -1,0 +1,36 @@
+.link,
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+.link--block {
+    display: block !important;
+}
+
+[class^="link link--block link--fancy"],
+.link--block[class^="link link--fancy"] {
+    text-decoration: underline;
+
+    &:after {
+        display: none;
+    }
+}
+
+.link--fancyHoverWhite {
+    @include fancy-hover($color_white);
+}
+
+.link--fancyHoverDark {
+    @include fancy-hover($color_black);
+}
+
+.link--fancyHoverGold {
+    @include fancy-hover($color_gold);
+}
+
+.link--fancyHoverGreen {
+    @include fancy-hover($color_gold);
+}
+

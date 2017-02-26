@@ -1,0 +1,57 @@
+// Color definitions
+$color_black                                : rgba(050,050,050,1.0);
+$color_white								: rgba(255,255,255,1.0);
+$color_gold									: rgba(194,170,133,1.0);
+$color_green								: darken(rgba(000,116,120,1.0),6%);
+
+// Font definitions
+$font_family_main                           : 'Neutra Text', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font_family_henriette-bold-italic          : 'Henriette-Bold-Italic', 'Georgia', serif;
+$font_family_henriette-medium-italic        : 'Henriette-Medium-Italic', 'Georgia', serif;
+
+$font_size_base                             : 21px;
+$font_size_base_sm                          : 15px;
+
+
+// Spacer
+$spacer                                     : 30px;
+
+// Breakpoints
+$breakpoint_desktop                         : 1440px;
+$breakpoint_laptop                          : 1200px;
+$breakpoint_tablet                          : 768px;
+$breakpoint_mobile                          : 510px;
+
+
+// Hamburger
+$hamburger-padding-x                        : 20px !default;
+$hamburger-padding-y                        : 32px !default;
+$hamburger-layer-width                      : 50px !default;
+$hamburger-layer-height                     : 1px !default;
+$hamburger-layer-spacing                    : 10px !default;
+$hamburger-layer-color                      : $color_white !default;
+$hamburger-layer-border-radius              : 4px !default;
+$hamburger-hover-opacity                    : 0.7 !default;
+$hamburger-hover-transition-duration        : 0.15s !default;
+$hamburger-hover-transition-timing-function : linear !default;
+
+
+// Grid settings
+$grid-settings: (
+	breakpoints: (
+    small: 'only screen and (min-width: #{$breakpoint_mobile})',
+		medium: 'only screen and (min-width: #{$breakpoint_tablet})',
+		large: 'only screen and (min-width: #{$breakpoint_laptop})',
+	),
+	bases: ( 12 ),
+	gutters: ( none: 0, narrow: $spacer/2, normal: $spacer, wide: $spacer*2 ),
+	default-gutter: $spacer,
+	gutter-breakpoints: true,
+	vertical-gutters: true,
+	fallback: true,
+	fallback-markup-fix: false,
+	grid-modifiers: ( left, center, right, top, middle, bottom, forwards, backwards, between, around, equal ),
+	grid-modifier-breakpoints: true,
+	item-modifiers: ( first, last, reset-order, push, pull, auto ),
+	item-modifier-breakpoints: true,
+);

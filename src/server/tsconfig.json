@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es6"
+    ],
+    "outDir": "../../dist",
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "target": "es5"
+  },
+  "files": [
+    "index.ts"
+  ]
+}

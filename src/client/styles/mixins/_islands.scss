@@ -1,0 +1,49 @@
+@mixin generate_island($multiplier: 1, $suffix: '') {
+    .island#{$suffix} {
+        margin-top: $spacer * $multiplier !important;
+        margin-bottom: $spacer * $multiplier !important;
+    }
+    .island-bottom#{$suffix} {
+        margin-bottom: $spacer * $multiplier !important;
+    }
+    .island-top#{$suffix} {
+        margin-top: $spacer * $multiplier !important;
+    }
+    .island-right#{$suffix} {
+        margin-right: $spacer * $multiplier !important;
+    }
+    .island-left#{$suffix} {
+        margin-left: $spacer * $multiplier !important;
+    }
+
+    /* Island Inner classes */
+
+    .island-inner#{$suffix} {
+        padding-top: $spacer * $multiplier !important;
+        padding-bottom: $spacer * $multiplier !important;
+    }
+    .island-inner-bottom#{$suffix} {
+        padding-bottom: $spacer * $multiplier !important;
+    }
+    .island-inner-top#{$suffix} {
+        padding-top: $spacer * $multiplier !important;
+    }
+    .island-inner-left#{$suffix} {
+        padding-left: $spacer * $multiplier !important;
+    }
+    .island-inner-right#{$suffix} {
+        padding-right: $spacer * $multiplier !important;
+    }
+}
+
+@mixin generate_islands() {
+    @include generate_island();
+    @include generate_island(0, '-none');
+    @include generate_island(0.25, '-quarter');
+    @include generate_island(0.5, '-half');
+    @include generate_island(0.75, '-threequarter');
+    @include generate_island(1.5, '-onehalf');
+    @include generate_island(2, '-double');
+    @include generate_island(3, '-tripple');
+}
+

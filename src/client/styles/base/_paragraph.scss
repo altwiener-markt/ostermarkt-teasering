@@ -1,0 +1,47 @@
+p,
+.paragraph {
+    font-family: $font_family_main;
+    font-size: 1rem;
+    line-height: 1.429em;
+    margin: 0;
+    & + &,
+    & + .headline {
+        padding-top: 1.5em;
+    }
+}
+
+.paragraph--lead {
+    @extend p;
+    letter-spacing: 120;
+    font-weight: bold;
+}
+
+.paragraph--consultation {
+    font-size: 0.8rem;
+}
+
+.paragraph--noSpace {
+    &+p {
+        padding-top: 0 !important;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-strong,
+.p--strong,
+strong {
+    font-weight: 700;
+}
+
+.italic,
+i {
+    font-size: 0.8em;
+    font-style: italic;
+}

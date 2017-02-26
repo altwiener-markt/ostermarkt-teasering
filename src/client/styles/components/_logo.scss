@@ -1,0 +1,28 @@
+.logo {
+    width: 100px;
+
+    @media(min-width: $breakpoint_tablet) {
+        width: 170px;
+    }
+
+    svg {
+        width: 100%;
+    }
+}
+
+
+.svg--gold {
+    fill: $color_gold;
+}
+.svg--white {
+    transition: fill 250ms ease-out;
+    fill: $color_white;
+
+    .logo--white &,
+    .header--open & {
+        fill: $color_white !important;
+    }
+    .header--fullwidth & {
+        fill: $color_black;
+    }
+}

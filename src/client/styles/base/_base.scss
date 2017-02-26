@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    // background-color: $color_green;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: $color_white;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+.root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: $font_family_main;
+    color: $color_black;
+    letter-spacing: 0.025em;
+    font-size: $font_size_base_sm;
+    @media(min-width: $breakpoint_tablet) {
+        font-size: $font_size_base;
+    }
+}
+
+body.no-scroll .main,
+body.no-scroll .root,
+body.no-scroll 
+{
+    overflow: hidden !important;
+}
+
+.root,
+.footer__inner,
+.header__barInner,
+.header__overlayInner,
+.feature__inner,
+.box
+{
+    max-width: $breakpoint_desktop;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    @media(min-width: $breakpoint_tablet) {
+        font-size: $font_size_base;
+    }
+}
+
+html,
+body,
+input,
+select,
+textarea {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.root {
+    max-width: $breakpoint_desktop;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main,
+.section__inner,
+.footer__inner,
+.header__barInner,
+.header__overlayInner,
+.feature__inner,
+.box
+{
+    padding-left: $spacer;
+    padding-right: $spacer;
+    @media(min-width: $breakpoint_tablet) {
+        padding-left: $spacer*4;
+        padding-right: $spacer*4;
+    }
+}
+
+// For storyblok
+.main > *:first-child:not(.section) {
+    margin-top: 240px;
+}

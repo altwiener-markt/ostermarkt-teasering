@@ -1,0 +1,25 @@
+@mixin fancy-hover($border_color) {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1.5em;
+    &:after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        bottom: 0.1em;
+        width: 0%;
+        height: 1px;
+        background: $border_color;
+        transition: width 150ms ease-out;
+
+        .is-mobile &.link--underline {
+            width:100%;
+        }
+    }
+    &:hover:after {
+        .is-desktop & {
+            width: 100%;
+        }
+    }
+}

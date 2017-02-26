@@ -1,0 +1,159 @@
+ /*
+ * <div class="modal modal--opn" tabindex="-1" role="dialog">
+ *      <div class="modal__dialog" role="document">
+ *          <button class="modal__close" data-modal-dismiss="target"><i class="icon-close"></i></button>
+ *          <div class="modal__body"></div>
+ *      </div>
+ * </div>
+ */
+
+$close_btn_size: 40px !default;
+$modal_min_height: 200px !default;
+
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,116,120,.97);
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+
+    &.modal--open {
+        opacity: 1;
+    }
+}
+
+.modal__wrapper {
+    //--> some code
+}
+
+.modal__dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 300px;
+    height: 80%;
+    width: 90%;
+
+    @media(min-width: $breakpoint_mobile) {
+        width: 80%;
+    }
+
+    @media(min-width: $breakpoint_tablet) {
+        // width: 50%;
+        max-width: $breakpoint_laptop;
+    }
+
+    .modal--mobile & {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: translate(0,0);
+    }
+
+    .modal--fullscreen & {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.modal__headline {
+    position: absolute;
+    left: 100px;
+    right: $spacer;
+    z-index:100;
+    top: 53px;
+
+    @media(min-width: $breakpoint_tablet) {
+        top: 45px;
+    }
+    .modal--slideshow & {
+        left: 60px;
+    }
+}
+
+.modal__body {
+    position: absolute;
+    padding: 120px 40px 40px;
+    color: $color_black;
+    background-color: $color_white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    [data-type="slideshow"] & {
+        padding: 100px 0px 0px 0px;
+        background-color: transparent;
+        color: $color_white;
+    }
+
+    .section {
+        padding: 0 !important;
+        position: relative;
+    }
+
+    .lightboxSwiper {
+        max-width: 100%;
+        width: auto;
+        max-height: 100%;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        position: relative;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: $close_btn_size;
+    width: $close_btn_size;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: block;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1000;
+
+    .modal--slideshow & {
+        left: 0;
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            opacity: .7;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: ' ';
+        width: $close_btn_size;
+        height: 1px;
+        left: 0%;
+        background-color: $color_gold;
+        position: absolute;
+        transition: background-color 150ms ease-out;
+
+        .is-mobile & {
+            height: 2px;
+        }
+    }
+    &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0%, -50%);
+    }
+    &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0%, 50%);
+    }
+}

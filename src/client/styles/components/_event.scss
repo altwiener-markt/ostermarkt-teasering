@@ -1,0 +1,124 @@
+.event {
+    display: flex;
+    flex-flow: row;
+    padding: $spacer 0 $spacer/2;
+    &+& {
+        border-top: 1px solid $color_gold;
+    }
+    &.is-visible {
+        display: flex;
+    }
+}
+
+.date--is-past {
+    // display: none;
+}
+
+.event__monthname {
+    font-size: 3rem;
+    padding-top: 1em;
+    padding-left: 0.4em;
+    @media(min-width: $breakpoint_tablet) {
+        font-size: 4rem;
+    }
+    &:first-child {
+        padding-top: 0;
+    }
+    &+.event {
+        position: relative;
+        z-index: 1;
+        border-top: 2px solid $color_gold;
+        background-color: $color_white;
+        margin-top: -0.5em;
+    }
+}
+
+.event--is-today {
+    border: 8px solid $color_green !important;
+    position: relative;
+    margin: 0 -8px;
+    padding-left: 10px;
+    &+.event {
+        border-top: none;
+    }
+    &:after {
+        content: 'heute';
+        position: absolute;
+        top: -$spacer;
+        right: -8px;
+        font-style: italic;
+        font-weight: 400;
+        color: $color_green;
+    }
+}
+
+.event__program {
+    align-self: center;
+    width: 70%;
+    @media(min-width: $breakpoint_mobile) {
+        width: 80%;
+    }
+}
+
+.event__programmPoint {
+    display: flex;
+    flex-flow: column;
+    @media(min-width: $breakpoint_mobile) {
+        flex-flow: row;
+    }
+    &+& {
+        padding-top: $spacer/3;
+    }
+}
+
+.event__date {
+    width: 30%;
+    @media(min-width: $breakpoint_mobile) {
+        width: 20%;
+    }
+}
+
+.event__day {
+    font-size: 4rem;
+    display: block;
+    font-family: $font_family_henriette-bold-italic;
+    letter-spacing: -0.04em;
+    line-height: 0.7em;
+    padding-bottom: 4px;
+    @media(min-width: $breakpoint_mobile) {
+        font-size: 5rem;
+    }
+}
+
+.event__dayShort {
+    display: none;
+    @media(min-width: $breakpoint_mobile) {
+        display: inline-block
+    }
+}
+
+.event__month {
+    letter-spacing: 0.04em;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.event__time {
+    width: 200px;
+    padding-bottom: 5px;
+    @media(min-width: $breakpoint_mobile) {
+        text-align: right;
+        padding: 0 $spacer/2 0 0;
+    }
+    @media(min-width: $breakpoint_tablet) {
+        padding: 0 $spacer 0 $spacer/2;
+    }
+    time {
+        color: $color_gold;
+        font-weight: bold;
+    }
+}
+
+.event__title {
+    width: 100%;
+}

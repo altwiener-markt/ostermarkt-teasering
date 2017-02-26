@@ -1,0 +1,19 @@
+.select {
+    position: relative;
+    &:before {
+        pointer-events: none;
+        content: " ";
+        background-image: url('../images/arrowSelect.svg');
+        position: absolute;
+        width: 3em;
+        right: 0;
+        line-height: 2.5em;
+        text-align: center;
+        height: 36px;
+        top: 0;
+        background-size: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        color: $color_white;
+    }
+}

@@ -1,0 +1,14 @@
+[data-grid--small^="12/12"] {
+    & + & {
+        @media(max-width: $breakpoint_tablet) {
+            padding-top: $spacer*4;
+        }
+    }
+}
+
+
+.grid {
+    & + & {
+        padding-top: $spacer*2;
+    }
+}

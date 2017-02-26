@@ -1,0 +1,137 @@
+.exhibitors {
+    width: 100%;
+    height: 100vh;
+    .select {
+        margin: $spacer $spacer 0;
+        @media(min-width: $breakpoint_tablet) {
+            display: none;
+        }
+    }
+}
+
+.exhibitor {
+    position: relative;
+    width: 80%;
+    height: auto;
+    @media(min-width: $breakpoint_tablet) {
+        position: fixed;
+        top: 20vh;
+        width: 30%;
+        height: 60vh;
+        background-color: $color_white;
+        box-shadow: 10px 10px 29px -9px rgba(0,0,0,0.75);
+
+        &:hover {
+            width: 80%;
+
+            .exhibitor__content {
+                width: 40%;
+            }
+            .exhibitor__picture {
+                width: 60%;
+                transition-delay: 300ms;
+            }
+        }
+    }
+}
+
+.exhibitor,
+.exhibitor__content,
+.exhibitor__picture {
+    transition: width 400ms ease-out;
+}
+
+.exhibitor__content {
+    box-sizing: border-box;
+    padding: $spacer*2 $spacer*2 $spacer $spacer;
+    @media(min-width: $breakpoint_tablet) {
+        padding: $spacer $spacer*2 $spacer $spacer;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+
+.exhibitor__information {
+    height: 100%;
+}
+
+.exhibitor__picture {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.exhibitor__number {
+    position: absolute;
+    top: 0em;
+    right: -0.35em;
+    font-size: 5.714rem;
+    font-family: $font_family_henriette-bold-italic;
+    letter-spacing: -0.08em;
+    line-height: 0.9em;
+    padding-bottom: 0.1em;  
+    color: $color_gold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+    @media(min-width: $breakpoint_tablet) {
+        top: -0.2em;
+    }
+
+    span {
+        font-size: 1.429rem;
+        vertical-align: 1.905rem;
+        letter-spacing: 0;
+    }
+}
+
+.exhibitor__name {
+    font-size: 1.3rem;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+
+.exhibitor__text {
+    font-size: 0.8rem;
+}
+
+.exhibitor__link {
+    font-size: 0.8rem;
+    padding-top: $spacer/2;
+    color: $color_gold;
+    @include fancy-hover($color_gold)
+}
+
+.exhibitors__map {
+    width: 100%;
+    @media(min-width: $breakpoint_tablet) {
+        margin-left: auto;
+        width: 75%;
+    }
+
+    #stands *:hover {
+        fill: $color_gold;
+    }
+
+    .stand--active {
+        fill: $color_gold;
+    }
+
+    #stands path {
+        position: relative;
+        z-index: 1;
+        transition: all 300ms ease-out;
+        cursor: pointer;
+    }
+
+    #text {
+        // display: none;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

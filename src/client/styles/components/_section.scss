@@ -1,0 +1,29 @@
+.section {
+    padding-top: $spacer*4;
+
+    &.section--spaceTopNone {
+        padding-top: 0;
+    }
+    &.section--spaceTopSmall {
+        padding-top: $spacer*2;
+    }
+    &.section--spaceTopMedium {
+        padding-top: $spacer*4;
+    }
+    &.section--spaceTopLarge {
+        padding-top: $spacer*8;
+    }
+}
+
+.section--fullscreen {
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section--backgroundGreen {
+    background-color: $color_green;
+    color: $color_white;
+}

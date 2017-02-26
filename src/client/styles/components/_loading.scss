@@ -1,0 +1,65 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20000;
+    background-color: darken(rgba(0,116,120,.9), 8%);
+}
+
+.loading__box {
+    position: relative;
+    top: 30%;
+}
+
+.loading__logo {
+    position: relative;
+    width: 30%;
+    max-width: 10rem;
+    left: 50%;
+    transform: translateX(-60%);
+
+    svg path {
+        fill: rgba(255,255,255, 0.8);
+    }
+
+    .svg--gold {
+        fill: $color_gold;
+    }
+
+    .svg--dot {
+        fill: $color_gold;
+        animation: loading_bounce 1.5s ease-in-out infinite;
+    }
+}
+
+.loading__message {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: $color_white;
+    padding-top: 1em;
+
+    &:after {
+        content: '';
+        width: 0.7em;
+        display: inline-block;
+        text-align: left;
+        padding-left: 0.3em;
+        animation: loading_dots 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes loading_dots {
+    0% { content: ''}
+    30% { content: '.'}
+    60% { content: '..'}
+    100% { content: '...' }
+}
+
+@keyframes loading_bounce {
+  0% { transform: translateX(0%); }
+  50% { transform: translateX(1050%); }
+  100% { transform: translateX(0%); }
+} 

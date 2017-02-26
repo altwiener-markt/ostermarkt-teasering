@@ -1,0 +1,55 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.headline {
+    font-family: $font_family_henriette-bold-italic;
+    line-height: 0.8em;
+    margin: 0;
+
+    .section > &,
+    .grid__item > & {
+        padding-top: 0;
+    }
+}
+
+.headline {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+
+    & + & {
+        padding-top: 0;
+    }
+}
+
+h1 {
+    font-size: 4rem;
+
+    @media(min-width: $breakpoint_tablet) {
+        font-size: 5.714rem;
+    }
+}
+
+h2 {
+    font-family: $font_family_henriette-medium-italic;
+    font-size: 1.5rem;
+
+    @media(min-width: $breakpoint_tablet) {
+        font-size: 2.857rem;
+    }
+}
+
+h3 {
+    font-family: $font_family_henriette-medium-italic;
+    font-size: 1.2rem;
+
+    @media(min-width: $breakpoint_tablet) {
+        font-size: 1.429rem;
+    }
+}
+
+.headline--largerLineHeight {
+    line-height: 1.1em;
+}
