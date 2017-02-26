@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response, Router } from "express";
-import { Route } from "../route";
+import { NextFunction, Request, Response, Router } from 'express';
+import { Route } from '../route';
 
 /**
  * [ / ] -> route
@@ -29,10 +29,10 @@ export class IndexRoute extends Route {
      */
     public static create(router: Router) {
 
-        console.info("[IndexRoute::create] Creating index route.");
+        console.info('[IndexRoute::create] Creating index route.');
 
         // add home page route
-        router.get("/", (req: Request, res: Response, next: NextFunction) => {
+        router.get('/', (req: Request, res: Response, next: NextFunction) => {
             new IndexRoute().index(req, res, next);
         });
     }
@@ -48,7 +48,7 @@ export class IndexRoute extends Route {
      */
     public index(req: Request, res: Response, next: NextFunction) {
         // set custom title
-        this.title = "Home";
+        this.title = 'Home';
 
         // set options
         // Storyblok data should be passed there
@@ -57,6 +57,6 @@ export class IndexRoute extends Route {
         };
 
         // render the index Template
-        this.render(req, res, "index.njk", options);
+        this.render(req, res, 'index.njk', options);
     }
 }

@@ -6,11 +6,13 @@ import * as nunjucks from 'nunjucks';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
 
+import { IndexRoute } from './routes/index.route';
+
 // import { useWebpackMiddleware } from './middleware/webpack.middleware';
 
 class App {
 
-    static VIEWS_FOLDER = path.resolve(path.join(__dirname, './views'));
+    static VIEWS_FOLDER = path.resolve(path.join(__dirname, '../views'));
     static ASSETS_FOLDER = path.resolve(path.join(__dirname, '../public'));
 
     public express: express.Application;
@@ -33,10 +35,6 @@ class App {
         });
     }
 
-    public static bootstrap(): App {
-        return new App();
-    }
-
     // Configure Express middleware.
     private middleware(): void {
 
@@ -55,12 +53,10 @@ class App {
 
     private routes(): void {
 
-        this._router.get('/', (req, res, next) => {
-            res.render('index.njk');
-        });
+        // List all the routes
+        IndexRoute.create(this._router);
 
-
-        this.express.use('/', this._router);
+        this.express.use(this._router);
     }
 
 }

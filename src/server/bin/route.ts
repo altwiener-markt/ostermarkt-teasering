@@ -17,16 +17,16 @@ export class Route {
     }
 
     public render(req: Request, res: Response, view: string, options?: Object) {
-        //add constants
-        res.locals.BASE_URL = "/";
+        // add constants
+        res.locals.BASE_URL = '/';
 
-        //add scripts
+        // add scripts
         res.locals.scripts = this.scripts;
 
-        //add title
+        // add title
         res.locals.title = this.title;
 
-        //render view
+        // render view
         res.render(view, options);
     }
 }
