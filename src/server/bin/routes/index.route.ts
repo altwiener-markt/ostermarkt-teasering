@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import { Route } from '../route';
 
+import { Storyblok } from '../models/Storyblok';
+import { IStoryblokTokens, IStoryArray, IStorySingle } from '../interfaces/IStoryblok';
+
 /**
  * [ / ] -> route
  *
@@ -10,6 +13,8 @@ import { Route } from '../route';
  */
 export class IndexRoute extends Route {
 
+    private storyblok: Storyblok;
+
     /**
      * Creates an instance of IndexRoute.
      *
@@ -17,6 +22,9 @@ export class IndexRoute extends Route {
      */
     constructor() {
         super();
+
+        this.storyblok = new Storyblok({ public: '' } as IStoryblokTokens)
+
     }
 
     /**
@@ -56,7 +64,13 @@ export class IndexRoute extends Route {
 
         };
 
+        this.storyblok.getStory('de/home', 'published')
+            .then((response: IStorySingle) => {
+                const _templ = `components/${response.story.content.component}.njk`;
+                this.render(req, res, _templ, response.story);
+            })
+
         // render the index Template
-        this.render(req, res, 'index.njk', options);
+        // this.render(req, res, 'index.njk', options);
     }
 }

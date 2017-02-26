@@ -9,6 +9,7 @@ export class Route {
     constructor() {
         this.title = 'BaseRoute'
         this.scripts = [];
+
     }
 
     public addScript(src: string): Route {

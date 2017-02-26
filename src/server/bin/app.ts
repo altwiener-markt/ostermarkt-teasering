@@ -26,8 +26,6 @@ class App {
         this.middleware();
         this.routes();
 
-        console.log(App.VIEWS_FOLDER)
-
         nunjucks.configure(App.VIEWS_FOLDER, {
             autoescape: true,
             express: this.express,
