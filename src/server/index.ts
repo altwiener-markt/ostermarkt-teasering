@@ -2,9 +2,7 @@ import * as http from 'http';
 import * as express from 'express';
 import * as debug from 'debug';
 
-
-
-import App from './app';
+import App from './bin/app';
 
 debug('ts-express:server');
 
